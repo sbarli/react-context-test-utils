@@ -12,4 +12,4 @@ export interface IRenderWithProvidersOptions extends Omit<RenderOptions, 'querie
   mergeDefaultValues?: boolean;
 }
 
-export type TMockProviders =(({ children }: React.PropsWithChildren) => React.JSX.Element)[]
+export type TMockProviders =(({ children }: any) => React.JSX.Element)[]
