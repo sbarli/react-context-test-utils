@@ -14,7 +14,7 @@ export const useExampleContext = () => useContext(ExampleContext);
 export const ExampleProvider: React.FC<React.PropsWithChildren<unknown>> = ({
   children,
 }) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('Unknown User');
 
   const updateName = useCallback((newName: string) => {
     setName(newName);

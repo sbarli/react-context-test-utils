@@ -1,9 +1,9 @@
-import { Name } from "../src/components/Name";
+import { HomeScreen } from "@/screens/HomeScreen";
 
-const HomeScreen = () => {
+const Home = () => {
   return (
-    <Name />
+    <HomeScreen />
   )
 };
 
-export default HomeScreen
+export default Home
