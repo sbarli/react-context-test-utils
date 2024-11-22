@@ -1,10 +1,10 @@
 import { RenderOptions } from '@testing-library/react-native';
 
-import { IExampleContext } from '@/state/example/ExampleProvider';
+import { INameContext } from '@/state/name/NameProvider';
 import { DeepPartial } from '../mergeDeep';
 
 export interface IContextDefaults {
-  exampleContext: IExampleContext;
+  nameContext: INameContext;
 }
 
 export interface IRenderWithProvidersOptions extends Omit<RenderOptions, 'queries'> {

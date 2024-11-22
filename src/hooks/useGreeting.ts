@@ -1,11 +1,11 @@
-import { useExampleContext } from "../state/example/ExampleProvider";
+import { useNameContext } from "../state/name/NameProvider";
 
 interface IUseGreeting {
   greeting: string;
 }
 
 export const useGreeting = (): IUseGreeting => {
-  const { name } = useExampleContext();
+  const { name } = useNameContext();
   return {
     greeting: `Hello, ${name}`
   }

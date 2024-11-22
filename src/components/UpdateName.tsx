@@ -1,9 +1,9 @@
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
-import { useExampleContext } from "../state/example/ExampleProvider";
+import { useNameContext } from "../state/name/NameProvider";
 import { useState } from "react";
 
 export const UpdateName = () => {
-  const { name, updateName } = useExampleContext();
+  const { name, updateName } = useNameContext();
   const [ newName, setNewName ] = useState(name);
 
   return (

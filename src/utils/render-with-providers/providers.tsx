@@ -1,15 +1,13 @@
 import { mock } from 'jest-mock-extended';
-import { ExampleContext, IExampleContext } from "../../state/example/ExampleProvider";
+import { NameContext, INameContext } from "../../state/name/NameProvider";
 import { IContextDefaults } from "./renderWithProviders.types";
 import { createMockProvider } from './createMockProvider';
 import { PropsWithChildren } from 'react';
-import { ReduceProviders } from '../../state/ReduceProviders';
+import { ReduceProviders } from '@/state/ReduceProviders';
+import { nameContextMock } from '../../__mocks__/state/nameContext';
 
 export const contextDefaults = (): IContextDefaults => ({
-  exampleContext: mock<IExampleContext>({
-    name: 'FirstName LastName',
-    updateName: jest.fn(),
-  }),
+  nameContext: mock<INameContext>(nameContextMock),
 });
 
 /**
@@ -21,7 +19,7 @@ export const contextDefaults = (): IContextDefaults => ({
  */
 export const Wrapper = (context: IContextDefaults) => ({ children }: PropsWithChildren) => {
   const contextProviders = [
-    createMockProvider(ExampleContext, context.exampleContext as IExampleContext, 'ExampleContext'),
+    createMockProvider(NameContext, context.nameContext as INameContext, 'NameContext'),
   ];
 
     // <Router>

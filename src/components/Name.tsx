@@ -1,8 +1,8 @@
 import { Text, View } from "react-native";
-import { useExampleContext } from "../state/example/ExampleProvider";
+import { useNameContext } from "../state/name/NameProvider";
 
 export const Name = () => {
-  const { name } = useExampleContext();
+  const { name } = useNameContext();
 
   return (
     <View>

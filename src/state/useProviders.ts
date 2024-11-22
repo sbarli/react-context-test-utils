@@ -1,7 +1,7 @@
-import { ExampleProvider } from "./example/ExampleProvider";
+import { NameProvider } from "./name/NameProvider";
 
 export const useProviders = () => {
   return [
-    ExampleProvider,
+    NameProvider,
   ];
 };
