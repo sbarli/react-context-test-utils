@@ -7,6 +7,6 @@ interface IUseGreeting {
 export const useGreeting = (): IUseGreeting => {
   const { name } = useNameContext();
   return {
-    greeting: `Hello, ${name}`
+    greeting: `Hello, ${name}!`
   }
 };

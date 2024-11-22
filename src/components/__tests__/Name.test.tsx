@@ -1,7 +1,4 @@
-import React from 'react';
-
 import { screen } from '@testing-library/react-native';
-
 import { renderWithProviders } from '@/utils/render-with-providers/renderWithProviders';
 import { Name } from '../Name';
 
