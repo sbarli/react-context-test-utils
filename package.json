@@ -1,5 +1,5 @@
 {
-  "name": "test-utils",
+  "name": "provider-provider-test-utils",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {

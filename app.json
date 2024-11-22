@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "test-utils",
-    "slug": "test-utils",
+    "name": "provider-test-utils",
+    "slug": "provider-test-utils",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
