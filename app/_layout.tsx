@@ -29,7 +29,7 @@ export default function RootLayout() {
     <ThemeProvider value={DefaultTheme}>
       <ReduceProviders>
         <Stack>
-          <Stack.Screen name="Home" />
+          <Stack.Screen name="index" options={{ title: "Home" }} />
           <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="auto" />
