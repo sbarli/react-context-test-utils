@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import { useProviders } from "./useProviders";
-import { TMockProviders } from "../utils/render-with-providers/renderWithProviders.types";
-import { TTheme } from "../types/theme";
+import { TMockProviders } from "@/types/renderWithProviders.types";
+import { TTheme } from "@/types/theme.types";
 
 interface IReduceProvidersProps extends PropsWithChildren {
   mockProviders?: TMockProviders;

@@ -1,7 +1,7 @@
 import { RenderOptions } from '@testing-library/react-native';
 
 import { INameContext } from '@/state/name/NameProvider';
-import { DeepPartial } from '../mergeDeep';
+import { DeepPartial } from '../utils/mergeDeep';
 
 export interface IContextDefaults {
   nameContext: INameContext;

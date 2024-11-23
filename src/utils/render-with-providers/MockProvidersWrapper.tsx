@@ -1,15 +1,21 @@
-import { mock } from 'jest-mock-extended';
-import { NameContext, INameContext } from "../../state/name/NameProvider";
-import { IContextDefaults } from "./renderWithProviders.types";
-import { createMockProvider } from './createMockProvider';
+import { NameContext, INameContext } from "@/state/name/NameProvider";
+import { IContextDefaults } from "@/types/renderWithProviders.types";
 import { PropsWithChildren } from 'react';
 import { ReduceProviders } from '@/state/ReduceProviders';
-import { nameContextMock } from '../../__mocks__/state/nameContextMock';
 import { ThemeProvider } from '@react-navigation/native';
 
-export const contextDefaults = (): IContextDefaults => ({
-  nameContext: mock<INameContext>(nameContextMock),
-});
+function createMockProvider<
+  C extends React.Context<S>,
+  S = C extends React.Context<infer T> ? T : never
+>(Context: C, state: S, name: string) {
+  const mockProvider = ({ children }: React.PropsWithChildren) => (
+    <Context.Provider value={state}>{children}</Context.Provider>
+  );
+
+  Object.defineProperty(mockProvider, 'name', { value: name }); // overrides readonly name property from Function prototype for comparison
+
+  return mockProvider;
+}
 
 /**
  * This Wrapper can be passed to the Wrapper option of @testing-library/react
@@ -19,7 +25,7 @@ export const contextDefaults = (): IContextDefaults => ({
  * @param context the list of context defaults for each provider
  * @note can add any other global / 3rd-party provider mocks here in addition to the React Context API mocks
  */
-export const Wrapper = (context: IContextDefaults) => ({ children }: PropsWithChildren) => {
+export const MockProvidersWrapper = (context: IContextDefaults) => ({ children }: PropsWithChildren) => {
   const mockProviders = [
     ThemeProvider,
     createMockProvider(NameContext, context.nameContext as INameContext, 'NameContext'),

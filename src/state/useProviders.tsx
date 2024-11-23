@@ -1,7 +1,7 @@
 import { PropsWithChildren, useMemo } from "react";
 import { NameProvider } from "./name/NameProvider";
 import { DefaultTheme, ThemeProvider, DarkTheme } from "@react-navigation/native";
-import { TTheme } from "../types/theme";
+import { TTheme } from "@/types/theme.types";
 
 interface IUseProvidersProps {
   theme?: TTheme;
