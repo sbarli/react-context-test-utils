@@ -1,8 +1,9 @@
 import { render as rtlRender, renderHook } from '@testing-library/react-native';
 
-import { Wrapper, contextDefaults } from './providers';
-import { IContextDefaults, IRenderWithProvidersOptions } from './renderWithProviders.types';
+import { IContextDefaults, IRenderWithProvidersOptions } from '@/types/renderWithProviders.types';
 import { mergeDeep } from '../mergeDeep';
+import { contextDefaults } from './contextDefaults';
+import { MockProvidersWrapper } from './MockProvidersWrapper';
 
 export const providerWrapper = (options: IRenderWithProvidersOptions = {}) => {
   const { context: overrides = {}, mergeDefaultValues } = options;
@@ -20,7 +21,7 @@ export const providerWrapper = (options: IRenderWithProvidersOptions = {}) => {
     });
   }
 
-  return { wrapper: Wrapper(defaults), contextWithDefaults: defaults };
+  return { wrapper: MockProvidersWrapper(defaults), contextWithDefaults: defaults };
 };
 
 /**
